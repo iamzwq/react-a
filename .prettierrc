@@ -16,5 +16,15 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "vueIndentScriptAndStyle": false
+  "vueIndentScriptAndStyle": false,
+  "overrides": [
+    {
+      "files": "*rc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
+  "tailwindFunctions": ["clsx"],
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

@@ -231,6 +231,20 @@ export default defineConfig({
 });
 ```
 
+`tsconfig.json`添加:
+
+```json
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
+```
+
 ### 2.7. 配置项目反向代理
 
 进入项目根目录配置`vite.config.ts`：
