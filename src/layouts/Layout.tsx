@@ -1,5 +1,5 @@
-import AnimatedOutlet from "@/components/AnimatedOutlet";
 import { Layout as AntdLayout } from "antd";
+import { Outlet } from "react-router-dom";
 import Content from "./Content";
 import Header from "./Header";
 import SiderBar from "./Sider/SiderBar";
@@ -14,7 +14,7 @@ export default function Layout() {
           <SiderBarMeun />
         </SiderBar>
         <Content>
-          <AnimatedOutlet />
+          <Outlet />
         </Content>
       </AntdLayout>
     </AntdLayout>

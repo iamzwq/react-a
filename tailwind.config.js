@@ -3,12 +3,12 @@ export default {
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    colors: {
-      success: "#22c55e",
-      warning: "#ff7849",
-      error: "#ff5630",
-      info: "#00b8d9",
-    },
+    // colors: {
+    //   success: "#22c55e",
+    //   warning: "#ff7849",
+    //   error: "#ff5630",
+    //   info: "#00b8d9",
+    // },
     screens: {
       xs: "480px",
       sm: "576px",
@@ -34,6 +34,19 @@ export default {
     extend: {
       animation: {
         "spin-slow": "spin 8s linear infinite",
+        router: "router-enter 300ms ease-in-out",
+      },
+      keyframes: {
+        "router-enter": {
+          from: {
+            opacity: 0,
+            transform: "translateY(100px)",
+          },
+          to: {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
       },
     },
   },

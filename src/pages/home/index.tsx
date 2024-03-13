@@ -1,13 +1,21 @@
-import { Col, Row } from "antd";
+import { Alert, Spin, Switch } from "antd";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(false);
   return (
-    <div className="px-6 py-4">
-      <Row gutter={16} className="gap-4">
-        <Col span={6} className="h-[200px] bg-info"></Col>
-        <Col span={6} className="h-[200px] bg-info"></Col>
-        <Col span={6} className="h-[200px] bg-info"></Col>
-      </Row>
+    <div className="animate-router px-6 py-4">
+      <Spin spinning={loading}>
+        <Alert
+          type="info"
+          message="Alert message title"
+          description="Further details about the context of this alert."
+        />
+      </Spin>
+      <div className="mt-3">
+        Loading state：
+        <Switch checked={loading} onChange={setLoading} />
+      </div>
     </div>
   );
 }

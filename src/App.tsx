@@ -21,7 +21,7 @@ export default function App() {
         locale={zhCN}
         theme={{
           token: {
-            colorPrimary: "#ee3f4d",
+            colorPrimary: "#6d28d9",
           },
         }}
       >
