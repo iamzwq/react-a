@@ -1,6 +1,6 @@
-import { set } from "lodash-es";
 import { lazy } from "react";
 import { RouteObject } from "react-router-dom";
+import { set } from "lodash-es";
 
 export const genarateRoutes = () => {
   const modules = import.meta.glob([

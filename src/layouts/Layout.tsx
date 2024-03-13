@@ -1,5 +1,5 @@
-import { Layout as AntdLayout } from "antd";
 import { Outlet } from "react-router-dom";
+import { Layout as AntdLayout } from "antd";
 import Content from "./Content";
 import Header from "./Header";
 import SiderBar from "./Sider/SiderBar";

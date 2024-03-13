@@ -1,6 +1,5 @@
 import { lazy } from "react";
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-
 import { routeConfig } from "./utils";
 
 const routes: RouteObject[] = [

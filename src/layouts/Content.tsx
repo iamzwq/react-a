@@ -1,6 +1,6 @@
-import { useSettingsStore } from "@/stores/settings";
-import { Layout } from "antd";
 import { PropsWithChildren } from "react";
+import { Layout } from "antd";
+import { useSettingsStore } from "@/stores/settings";
 
 export default function Content({ children }: PropsWithChildren) {
   const siderCollapsed = useSettingsStore(state => state.siderCollapsed);

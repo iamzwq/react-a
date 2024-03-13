@@ -1,12 +1,12 @@
-import { disableCache } from "@iconify/react";
-import { Spin } from "antd";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Spin } from "antd";
+import { disableCache } from "@iconify/react";
+import SpinIndicator from "@/components/SpinIndicator";
 import App from "./App.tsx";
-import SpinIndicator from "./components/SpinIndicator/index.tsx";
 // iconify icon
 import "./utils/iconifyIcon";
-
+// css
 import "./styles/index.css";
 
 // https://iconify.design/docs/icon-components/react/disable-cache.html
