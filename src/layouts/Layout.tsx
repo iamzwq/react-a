@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { Layout as AntdLayout } from "antd";
+import SiderBarMeun from "./components/SiderMenu";
 import Content from "./Content";
 import Header from "./Header";
-import SiderBar from "./Sider/SiderBar";
-import SiderBarMeun from "./Sider/SiderBarMenu";
+import SiderBar from "./SiderBar";
 
 export default function Layout() {
   return (

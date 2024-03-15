@@ -24,6 +24,4 @@ const routes: RouteObject[] = [
   },
 ];
 
-const router = createBrowserRouter(routes, { basename: "/" });
-
-export default router;
+export const router = createBrowserRouter(routes, { basename: "/" });

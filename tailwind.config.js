@@ -32,6 +32,12 @@ export default {
       "7xl": "72px",
     },
     extend: {
+      textColor: {
+        primary: "var(--color-primary)",
+      },
+      backgroundColor: {
+        primary: "var(--bg-primary)",
+      },
       animation: {
         "spin-slow": "spin 8s linear infinite",
         router: "router-enter 300ms ease-in-out",
@@ -40,11 +46,11 @@ export default {
         "router-enter": {
           from: {
             opacity: 0,
-            transform: "translateY(100px)",
+            transform: "translateX(-10px)",
           },
           to: {
             opacity: 1,
-            transform: "translateY(0)",
+            transform: "translateX(0)",
           },
         },
       },

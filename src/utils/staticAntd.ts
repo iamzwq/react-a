@@ -5,7 +5,7 @@ let message: useAppProps["message"] = antdMessage;
 let notification: useAppProps["notification"] = antdNotification;
 let modal: useAppProps["modal"];
 
-export default () => {
+export function StaticAntd() {
   const staticFunctions = App.useApp();
 
   message = staticFunctions.message;
@@ -13,6 +13,6 @@ export default () => {
   modal = staticFunctions.modal;
 
   return null;
-};
+}
 
 export { message, modal, notification };

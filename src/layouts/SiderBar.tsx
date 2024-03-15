@@ -1,9 +1,9 @@
 import { PropsWithChildren } from "react";
 import { Layout } from "antd";
-import { setSiderCollapsed, useSettingsStore } from "@/stores/settings";
+import { setSiderCollapsed, useSettingStore } from "@/stores";
 
 export default function SiderBar({ children }: PropsWithChildren) {
-  const siderCollapsed = useSettingsStore(state => state.siderCollapsed);
+  const siderCollapsed = useSettingStore(state => state.siderCollapsed);
   return (
     <Layout.Sider
       theme="light"
