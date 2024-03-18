@@ -28,8 +28,8 @@ export default function SiderMeun() {
       items={menuItems}
       theme="light"
       mode="inline"
-      defaultSelectedKeys={selectedKeys}
-      className="!border-e-0"
+      selectedKeys={selectedKeys}
+      className="border-e-0"
     />
   );
 }

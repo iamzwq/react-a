@@ -10,7 +10,7 @@ export default function SiderBar({ children }: PropsWithChildren) {
       collapsible
       collapsed={siderCollapsed}
       onCollapse={setSiderCollapsed}
-      className="!fixed h-full"
+      className="fixed h-full"
     >
       {children}
     </Layout.Sider>

@@ -18,11 +18,9 @@ export default function App() {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.body.classList.remove(ThemeMode.Light);
       document.body.classList.add(ThemeMode.Dark);
     } else {
       document.body.classList.remove(ThemeMode.Dark);
-      document.body.classList.add(ThemeMode.Light);
     }
   }, [isDarkMode]);
 
