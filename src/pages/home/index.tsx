@@ -4,7 +4,7 @@ import { Alert, Space, Spin, Switch } from "antd";
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
   return (
-    <div className="animate-router px-6 pt-4">
+    <div className="animate-router-enter px-6 pt-4">
       <Space direction="vertical" className="w-full">
         <Spin spinning={loading}>
           <Alert

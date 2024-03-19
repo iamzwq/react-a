@@ -33,27 +33,10 @@ export default {
       "7xl": "72px",
     },
     extend: {
-      textColor: {
-        primary: "var(--color-primary)",
-      },
-      backgroundColor: {
-        primary: "var(--bg-primary)",
-      },
       animation: {
-        "spin-slow": "spin 8s linear infinite",
-        router: "router-enter 300ms ease-in-out",
-      },
-      keyframes: {
-        "router-enter": {
-          from: {
-            opacity: 0,
-            transform: "translateX(-10px)",
-          },
-          to: {
-            opacity: 1,
-            transform: "translateX(0)",
-          },
-        },
+        "spin-slow": "spin 6s linear infinite",
+        "router-enter": "routerEnter 0.3s ease-in-out",
+        "heart-beat": "heartBeat 0.6s ease-in-out",
       },
     },
   },

@@ -1,6 +1,6 @@
 export default function VuePage() {
   return (
-    <div className="animate-router px-6 py-4">
+    <div className="animate-router-enter px-6 py-4">
       <h1>什么是 Vue？</h1>
       <p>
         Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript

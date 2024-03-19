@@ -8,7 +8,7 @@ const routes: RouteObject[] = [
   },
   {
     path: "404",
-    Component: lazy(() => import("@/pages/404")),
+    Component: lazy(() => import("@/pages/error/404")),
   },
   {
     path: "/",
@@ -21,6 +21,10 @@ const routes: RouteObject[] = [
       {
         path: "home",
         Component: lazy(() => import("@/pages/home")),
+      },
+      {
+        path: "users",
+        Component: lazy(() => import("@/pages/users")),
       },
       // ...routeConfig,
     ],

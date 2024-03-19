@@ -1,22 +1,59 @@
-import { Button, Layout } from "antd";
+import { Button, Form, type FormProps, Input, Layout } from "antd";
 import { useRouter } from "@/hooks";
+import { message, notification } from "@/utils";
+
+type FieldType = {
+  username: string;
+  password: string;
+};
 
 export default function LoginPage() {
   const { replace } = useRouter();
 
+  const onFinish: FormProps<FieldType>["onFinish"] = () => {
+    replace("/");
+    setTimeout(() => {
+      notification.success({
+        message: "Login successfully!",
+        placement: "topRight",
+        duration: 2,
+      });
+    }, 500);
+  };
+
+  const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = () => {
+    message.error("Failed to login, please check your input!");
+  };
+
   return (
     <Layout className="flex h-screen items-center justify-center">
-      <form
-        onSubmit={() => replace("/home")}
-        className="w-[480px] rounded bg-white p-4 shadow-md dark:bg-white/20"
+      <Form
+        initialValues={{ username: "admin", password: "123456" }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="off"
+        size="large"
+        className="w-[400px] rounded-md bg-[--bg-primary] px-8 pb-8 shadow-lg"
       >
-        <h1 className="mb-4 text-center text-2xl font-bold">登 录</h1>
-        <input type="text" placeholder="用户名" />
-        <input type="password" placeholder="密码" />
-        <Button type="primary" htmlType="submit">
-          登录
-        </Button>
-      </form>
+        <h2 className="mb-4 text-center">Sign In</h2>
+        <Form.Item<FieldType>
+          name="username"
+          rules={[{ required: true, message: "Please input your username!" }]}
+        >
+          <Input placeholder="Username" />
+        </Form.Item>
+        <Form.Item<FieldType>
+          name="password"
+          rules={[{ required: true, message: "Please input your password!" }]}
+        >
+          <Input.Password placeholder="Password" />
+        </Form.Item>
+        <Form.Item className="mb-0">
+          <Button type="primary" htmlType="submit" block>
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
     </Layout>
   );
 }

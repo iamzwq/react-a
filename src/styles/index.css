@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
 @import url("./variables.css");
 @import url("./reset.css");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("./keyframes.css");
+@import url("./base.css");
