@@ -9,6 +9,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { setThemeMode, useSettingStore } from "@/stores";
+import FullscreenButton from "./components/FullscreenButton";
 import { ThemeMode } from "@/typings/public";
 
 const items: MenuProps["items"] = [
@@ -31,6 +32,7 @@ export default function Header() {
       <div className="fixed inset-x-0 z-[1000] flex h-16 items-center bg-[--bg-primary] px-6 text-2xl">
         <div className="text-[--color-primary]">LOGO</div>
         <div className="ml-auto flex gap-2">
+          <FullscreenButton />
           <Badge count={5} size="small">
             <Button
               className="flex items-center justify-center border-none bg-[#fff3e6] text-[--color-primary] dark:bg-[#291811]"
@@ -45,8 +47,7 @@ export default function Header() {
             onClick={() => setThemeMode(isDarkMode ? ThemeMode.Light : ThemeMode.Dark)}
           />
           <Button
-            className="flex animate-spin-slow items-center justify-center"
-            type="text"
+            className="flex animate-spin-slow items-center justify-center border-none bg-[#fff3e6] text-[--color-primary] dark:bg-[#291811]"
             shape="circle"
             icon={<SettingOutlined />}
           />

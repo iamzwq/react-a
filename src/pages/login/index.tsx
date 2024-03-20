@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import { Button, Form, type FormProps, Input, Layout } from "antd";
-import { useRouter } from "@/hooks";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { useTitle } from "@/hooks";
 import { message, notification } from "@/utils";
 
 type FieldType = {
@@ -8,10 +10,12 @@ type FieldType = {
 };
 
 export default function LoginPage() {
-  const { replace } = useRouter();
+  const navigate = useNavigate();
+
+  useTitle("登录 - xx管理系统");
 
   const onFinish: FormProps<FieldType>["onFinish"] = () => {
-    replace("/");
+    navigate("/", { replace: true });
     setTimeout(() => {
       notification.success({
         message: "Login successfully!",
@@ -33,24 +37,27 @@ export default function LoginPage() {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
         size="large"
-        className="w-[400px] rounded-md bg-[--bg-primary] px-8 pb-8 shadow-lg"
+        className="w-[400px] rounded-md bg-[--bg-primary] px-8 py-8 shadow"
       >
-        <h2 className="mb-4 text-center">Sign In</h2>
+        <h2 className="mb-4 flex items-center justify-center">
+          <img src="/vite.svg" alt="vite" className="mr-2 w-[30px]" />
+          系统登录
+        </h2>
         <Form.Item<FieldType>
           name="username"
           rules={[{ required: true, message: "Please input your username!" }]}
         >
-          <Input placeholder="Username" />
+          <Input addonBefore={<UserOutlined />} placeholder="Username" />
         </Form.Item>
         <Form.Item<FieldType>
           name="password"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
-          <Input.Password placeholder="Password" />
+          <Input.Password addonBefore={<LockOutlined />} placeholder="Password" />
         </Form.Item>
-        <Form.Item className="mb-0">
+        <Form.Item>
           <Button type="primary" htmlType="submit" block>
-            Submit
+            登录
           </Button>
         </Form.Item>
       </Form>

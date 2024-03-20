@@ -3,7 +3,7 @@ import { persist } from "zustand/middleware";
 import { ThemeMode } from "@/typings/public";
 
 const initialState = {
-  siderCollapsed: false,
+  sideCollapsed: false,
   themeMode: ThemeMode.Light,
 };
 
@@ -13,8 +13,8 @@ export const useSettingStore = create<typeof initialState>()(
   })
 );
 
-export const setSiderCollapsed = (siderCollapsed: boolean) => {
-  useSettingStore.setState({ siderCollapsed });
+export const setSideCollapsed = (sideCollapsed: boolean) => {
+  useSettingStore.setState({ sideCollapsed });
 };
 
 export const setThemeMode = (themeMode: ThemeMode) => {

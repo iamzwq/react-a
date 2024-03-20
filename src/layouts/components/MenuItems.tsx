@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { HeartOutlined, HomeOutlined, UserOutlined } from "@ant-design/icons";
+import Icon, { HomeOutlined, UserOutlined } from "@ant-design/icons";
+import errorMenuSvg from "@/assets/svgs/errorMenuSvg";
 
-export interface SiderMuenItemsProps {
+export interface SideMenuItemsProps {
   label: React.ReactNode;
   path: string;
   icon?: React.ReactNode;
-  children?: SiderMuenItemsProps[];
+  children?: SideMenuItemsProps[];
 }
 
-export const SIDER_MENU_ITEMS: SiderMuenItemsProps[] = [
+export const SIDE_MENU_ITEMS: SideMenuItemsProps[] = [
   {
     label: <Link to="/home">首页</Link>,
     path: "/home",
@@ -22,7 +23,7 @@ export const SIDER_MENU_ITEMS: SiderMuenItemsProps[] = [
   {
     label: "Error",
     path: "/error",
-    icon: <HeartOutlined />,
+    icon: <Icon component={errorMenuSvg} />,
     children: [
       {
         label: <Link to="/404">404 Page</Link>,
