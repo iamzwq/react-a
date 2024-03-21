@@ -6,7 +6,7 @@ export default function Content({ children }: PropsWithChildren) {
   const sideCollapsed = useSettingStore(state => state.sideCollapsed);
   return (
     <Layout.Content
-      className={`h-screen transition-all ${sideCollapsed ? "lg:ml-[80px]" : "lg:ml-[200px]"}`}
+      className={`transition-all ${sideCollapsed ? "lg:ml-[80px]" : "lg:ml-[200px]"}`}
     >
       {children}
     </Layout.Content>

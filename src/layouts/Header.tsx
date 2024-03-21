@@ -14,10 +14,18 @@ import { ThemeMode } from "@/typings/public";
 
 const items: MenuProps["items"] = [
   {
-    key: "1",
+    key: "profile",
+    label: (
+      <Link to="/profile">
+        <UserOutlined /> &nbsp; 个人中心
+      </Link>
+    ),
+  },
+  {
+    key: "logout",
     label: (
       <Link to="/login">
-        <LogoutOutlined className="mr-4" /> Logout
+        <LogoutOutlined /> &nbsp; 退出登录
       </Link>
     ),
   },
@@ -33,22 +41,25 @@ export default function Header() {
         <div className="text-[--color-primary]">LOGO</div>
         <div className="ml-auto flex gap-2">
           <FullscreenButton />
-          <Badge count={5} size="small">
+          <Badge count={5} size="small" offset={[-5, 5]}>
             <Button
-              className="flex items-center justify-center border-none bg-[#fff3e6] text-[--color-primary] dark:bg-[#291811]"
+              className="flex items-center justify-center text-[--color-primary]"
               shape="circle"
+              type="text"
               icon={<BellOutlined />}
             />
           </Badge>
           <Button
-            className="flex items-center justify-center border-none bg-[#fff3e6] text-[--color-primary] dark:bg-[#291811]"
+            className="flex items-center justify-center text-[--color-primary]"
             shape="circle"
+            type="text"
             icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
             onClick={() => setThemeMode(isDarkMode ? ThemeMode.Light : ThemeMode.Dark)}
           />
           <Button
-            className="flex animate-spin-slow items-center justify-center border-none bg-[#fff3e6] text-[--color-primary] dark:bg-[#291811]"
+            className="flex animate-spin-slow items-center justify-center text-[--color-primary]"
             shape="circle"
+            type="text"
             icon={<SettingOutlined />}
           />
           <Dropdown menu={{ items }} arrow>

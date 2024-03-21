@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Icon, { HomeOutlined, UserOutlined } from "@ant-design/icons";
-import errorMenuSvg from "@/assets/svgs/errorMenuSvg";
+import { HomeOutlined, UsergroupAddOutlined } from "@ant-design/icons";
+import AlertTriangleIcon from "@/assets/icons/AlertTriangleIcon";
 
 export interface SideMenuItemsProps {
   label: React.ReactNode;
@@ -18,12 +18,12 @@ export const SIDE_MENU_ITEMS: SideMenuItemsProps[] = [
   {
     label: <Link to="/users">用户管理</Link>,
     path: "/users",
-    icon: <UserOutlined />,
+    icon: <UsergroupAddOutlined />,
   },
   {
     label: "Error",
     path: "/error",
-    icon: <Icon component={errorMenuSvg} />,
+    icon: <AlertTriangleIcon />,
     children: [
       {
         label: <Link to="/404">404 Page</Link>,

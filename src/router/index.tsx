@@ -26,6 +26,10 @@ const routes: RouteObject[] = [
         path: "users",
         Component: lazy(() => import("@/pages/users")),
       },
+      {
+        path: "profile",
+        Component: lazy(() => import("@/pages/profile")),
+      },
       // ...routeConfig,
     ],
   },
