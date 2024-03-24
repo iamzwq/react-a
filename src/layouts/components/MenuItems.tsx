@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { HomeOutlined, UsergroupAddOutlined } from "@ant-design/icons";
+import { FireOutlined, HomeOutlined } from "@ant-design/icons";
 import AlertTriangleIcon from "@/assets/icons/AlertTriangleIcon";
+import BirdIcon from "@/assets/icons/BirdIcon";
+import NewsIcon from "@/assets/icons/NewsIcon";
 
 export interface SideMenuItemsProps {
   label: React.ReactNode;
@@ -16,9 +18,19 @@ export const SIDE_MENU_ITEMS: SideMenuItemsProps[] = [
     icon: <HomeOutlined />,
   },
   {
-    label: <Link to="/users">用户管理</Link>,
-    path: "/users",
-    icon: <UsergroupAddOutlined />,
+    label: "组件",
+    path: "/comp",
+    icon: <FireOutlined />,
+    children: [
+      {
+        label: <Link to="/comp/base">Base</Link>,
+        path: "/comp/base",
+      },
+      {
+        label: <Link to="/comp/alert">Alert</Link>,
+        path: "/comp/alert",
+      },
+    ],
   },
   {
     label: "Error",
@@ -30,5 +42,35 @@ export const SIDE_MENU_ITEMS: SideMenuItemsProps[] = [
         path: "/404",
       },
     ],
+  },
+  {
+    label: "关于",
+    path: "/about",
+    icon: <BirdIcon />,
+  },
+  {
+    label: "新闻",
+    path: "/news",
+    icon: <NewsIcon />,
+  },
+  {
+    label: "功能模块1",
+    path: "/nav-1",
+    icon: <NewsIcon />,
+  },
+  {
+    label: "功能模块2",
+    path: "/nav-2",
+    icon: <NewsIcon />,
+  },
+  {
+    label: "功能模块3",
+    path: "/nav-3",
+    icon: <NewsIcon />,
+  },
+  {
+    label: "功能模块4",
+    path: "/nav-4",
+    icon: <NewsIcon />,
   },
 ];

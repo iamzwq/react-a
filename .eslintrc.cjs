@@ -14,6 +14,8 @@ module.exports = {
     "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
     "react-refresh/only-export-components": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    eqeqeq: "error", // require === and !==
+    "no-alert": "error",
     "no-console": "error",
     "no-debugger": "error",
     "simple-import-sort/imports": [

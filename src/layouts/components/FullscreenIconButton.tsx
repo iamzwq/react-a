@@ -6,9 +6,10 @@ export default function FullscreenButton() {
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   return (
     <Button
-      className="flex items-center justify-center text-[--color-primary]"
+      className="flex items-center justify-center text-primary"
       shape="circle"
       type="text"
+      size="large"
       icon={isFullscreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
       onClick={toggleFullscreen}
     />

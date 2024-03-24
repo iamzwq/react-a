@@ -1,8 +1,6 @@
 import Icon from "@ant-design/icons";
 
-export default function AlertTriangleIcon(
-  props: Partial<React.ComponentProps<typeof Icon>>
-) {
+export default function BirdIcon(props: Partial<React.ComponentProps<typeof Icon>>) {
   return (
     <Icon
       component={() => (
@@ -12,14 +10,16 @@ export default function AlertTriangleIcon(
           height="1em"
           viewBox="0 0 24 24"
         >
-          <path
+          <g
             fill="none"
             stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
-            d="m10.24 3.957l-8.422 14.06A1.989 1.989 0 0 0 3.518 21h16.845a1.989 1.989 0 0 0 1.7-2.983L13.64 3.957a1.989 1.989 0 0 0-3.4 0zM12 9v4m0 4h.01"
-          ></path>
+          >
+            <path d="M16 7h.01M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
+            <path d="m20 7l2 .5l-2 .5M10 18v3m4-3.25V21m-7-3a6 6 0 0 0 3.84-10.61"></path>
+          </g>
         </svg>
       )}
       {...props}

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Form, type FormProps, Input, Layout } from "antd";
+import { Button, Form, type FormProps, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useTitle } from "@/hooks";
 import { message, notification } from "@/utils";
@@ -15,7 +15,7 @@ export default function LoginPage() {
   useTitle("登录 - xx管理系统");
 
   const onFinish: FormProps<FieldType>["onFinish"] = () => {
-    navigate("/", { replace: true });
+    navigate("/home", { replace: true });
     setTimeout(() => {
       notification.success({
         message: "Login successfully!",
@@ -30,17 +30,17 @@ export default function LoginPage() {
   };
 
   return (
-    <Layout className="flex h-screen items-center justify-center">
+    <div className="flex h-screen items-center justify-center">
       <Form
         initialValues={{ username: "admin", password: "123456" }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
         size="large"
-        className="w-[400px] rounded-md bg-[--bg-primary] px-8 py-8 shadow"
+        className="w-[400px] rounded-md bg-[--layout-body-bg] px-8 py-8 shadow"
       >
         <h2 className="mb-4 flex items-center justify-center">
-          <img src="/vite.svg" alt="vite" className="mr-2 w-[30px]" />
+          <img src="/favicon.svg" alt="logo" className="mr-2 w-9" />
           系统登录
         </h2>
         <Form.Item<FieldType>
@@ -61,6 +61,6 @@ export default function LoginPage() {
           </Button>
         </Form.Item>
       </Form>
-    </Layout>
+    </div>
   );
 }

@@ -1,15 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  important: "#root",
+  important: "#body",
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    // colors: {
-    //   success: "#22c55e",
-    //   warning: "#ff7849",
-    //   error: "#ff5630",
-    //   info: "#00b8d9",
-    // },
     screens: {
       xs: "480px",
       sm: "576px",
@@ -33,8 +27,11 @@ export default {
       "7xl": "72px",
     },
     extend: {
+      colors: {
+        primary: "var(--color-primary)",
+      },
       animation: {
-        "spin-slow": "spin 6s linear infinite",
+        "spin-slow": "spin 5s linear infinite",
         "router-enter": "routerEnter 0.3s ease-in-out",
         "heart-beat": "heartBeat 0.6s ease-in-out",
       },

@@ -1,8 +1,12 @@
 :root {
-  --color-primary: #ea580c;
+  --layout-header-bg: #fff;
+  --layout-body-bg: #fcfcfc;
+  --color-primary: #722ed1;
   --bg-primary: #fff;
 }
 
 .dark {
-  --bg-primary: #121212;
+  --layout-header-bg: #000;
+  --layout-body-bg: #111;
+  --color-primary: #b37feb;
 }

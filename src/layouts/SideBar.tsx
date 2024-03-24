@@ -10,7 +10,7 @@ export default function SideBar({ children }: PropsWithChildren) {
       collapsible
       collapsed={sideCollapsed}
       onCollapse={setSideCollapsed}
-      className="fixed h-full"
+      className="sticky top-16 h-[calc(100vh-112px)]"
     >
       {children}
     </Layout.Sider>

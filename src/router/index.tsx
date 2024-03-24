@@ -23,8 +23,21 @@ const routes: RouteObject[] = [
         Component: lazy(() => import("@/pages/home")),
       },
       {
-        path: "users",
-        Component: lazy(() => import("@/pages/users")),
+        path: "comp",
+        children: [
+          {
+            index: true,
+            element: <Navigate to="/comp/base" replace />,
+          },
+          {
+            path: "base",
+            Component: lazy(() => import("@/pages/comp/base")),
+          },
+          {
+            path: "alert",
+            Component: lazy(() => import("@/pages/comp/alert")),
+          },
+        ],
       },
       {
         path: "profile",
