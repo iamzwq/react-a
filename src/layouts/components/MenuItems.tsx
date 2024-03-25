@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FireOutlined, HomeOutlined } from "@ant-design/icons";
+import { DashboardOutlined, FireOutlined, HomeOutlined } from "@ant-design/icons";
 import AlertTriangleIcon from "@/assets/icons/AlertTriangleIcon";
 import BirdIcon from "@/assets/icons/BirdIcon";
 import NewsIcon from "@/assets/icons/NewsIcon";
@@ -16,6 +16,11 @@ export const SIDE_MENU_ITEMS: SideMenuItemsProps[] = [
     label: <Link to="/home">首页</Link>,
     path: "/home",
     icon: <HomeOutlined />,
+  },
+  {
+    label: <Link to="/dashboard">Dashboard</Link>,
+    path: "/dashboard",
+    icon: <DashboardOutlined />,
   },
   {
     label: "组件",

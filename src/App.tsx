@@ -22,7 +22,7 @@ export default function App() {
       locale={zhCN}
       theme={{
         token: {
-          colorPrimary: isDark ? "#b37feb" : "#722ed1",
+          colorPrimary: "#722ed1",
         },
         algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
         cssVar: true,

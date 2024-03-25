@@ -2,14 +2,13 @@
   --layout-header-bg: #fff;
   --layout-body-bg: #fcfcfc;
   --color-primary: #722ed1;
-  --color-scrollbar: #eee;
-  --color-scrollbar-hover: #bbb;
+  --color-scrollbar: #aaa;
+  --color-scrollbar-hover: #666;
 }
 
 html.dark {
   --layout-header-bg: #000;
   --layout-body-bg: #111;
-  --color-primary: #b37feb;
-  --color-scrollbar: #111;
+  --color-scrollbar: #444;
   --color-scrollbar-hover: #222;
 }

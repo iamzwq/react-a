@@ -23,6 +23,10 @@ const routes: RouteObject[] = [
         Component: lazy(() => import("@/pages/home")),
       },
       {
+        path: "dashboard",
+        Component: lazy(() => import("@/pages/dashboard")),
+      },
+      {
         path: "comp",
         children: [
           {

@@ -73,7 +73,7 @@ export default function HomePage() {
               <Radio.Group>
                 <Radio value={1}>Radio</Radio>
               </Radio.Group>
-              <Checkbox checked>Checkbox</Checkbox>
+              <Checkbox defaultChecked>Checkbox</Checkbox>
             </Flex>
             <Flex gap="small">
               <Radio.Group defaultValue="a" buttonStyle="solid">
