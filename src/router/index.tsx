@@ -27,19 +27,19 @@ const routes: RouteObject[] = [
         Component: lazy(() => import("@/pages/dashboard")),
       },
       {
-        path: "comp",
+        path: "demo",
         children: [
           {
             index: true,
-            element: <Navigate to="/comp/base" replace />,
+            element: <Navigate to="/demo/level-1" replace />,
           },
           {
-            path: "base",
-            Component: lazy(() => import("@/pages/comp/base")),
+            path: "level-1",
+            Component: lazy(() => import("@/pages/demo/level1")),
           },
           {
-            path: "alert",
-            Component: lazy(() => import("@/pages/comp/alert")),
+            path: "level-2",
+            Component: lazy(() => import("@/pages/demo/level2")),
           },
         ],
       },

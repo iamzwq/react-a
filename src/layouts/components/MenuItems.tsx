@@ -23,17 +23,17 @@ export const SIDE_MENU_ITEMS: SideMenuItemsProps[] = [
     icon: <DashboardOutlined />,
   },
   {
-    label: "组件",
-    path: "/comp",
+    label: "Demo",
+    path: "/demo",
     icon: <FireOutlined />,
     children: [
       {
-        label: <Link to="/comp/base">Base</Link>,
-        path: "/comp/base",
+        label: <Link to="/demo/level-1">level-1</Link>,
+        path: "/demo/level-1",
       },
       {
-        label: <Link to="/comp/alert">Alert</Link>,
-        path: "/comp/alert",
+        label: <Link to="/demo/level-2">level-2</Link>,
+        path: "/demo/level-2",
       },
     ],
   },
