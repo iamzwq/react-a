@@ -21,10 +21,16 @@ const routes: RouteObject[] = [
       {
         path: "home",
         Component: lazy(() => import("@/pages/home")),
+        handle: {
+          title: "首页",
+        },
       },
       {
         path: "dashboard",
         Component: lazy(() => import("@/pages/dashboard")),
+        handle: {
+          title: "Dashboard",
+        },
       },
       {
         path: "demo",
@@ -36,10 +42,16 @@ const routes: RouteObject[] = [
           {
             path: "level-1",
             Component: lazy(() => import("@/pages/demo/level1")),
+            handle: {
+              title: "Level 1",
+            },
           },
           {
             path: "level-2",
             Component: lazy(() => import("@/pages/demo/level2")),
+            handle: {
+              title: "Level 2",
+            },
           },
         ],
       },
