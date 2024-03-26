@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
-import { useLocation, useMatches, useNavigate } from "react-router-dom";
+import { Suspense, useEffect, useState } from "react";
+import { useLocation, useMatches, useNavigate, useOutlet } from "react-router-dom";
 import { Tabs } from "antd";
+import { SuspenseFallback } from "@/components";
+import { last } from "@/utils";
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 
@@ -8,13 +10,12 @@ export default function KeepAliveTabWrapper() {
   const matches = useMatches();
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const outlet = useOutlet();
 
   const [activeTab, setActiveTab] = useState<any>();
   const [routerTabs, setRouterTabs] = useState<any[]>([]);
 
   const remove = (targetKey: TargetKey) => {
-    if (routerTabs.length === 1) return;
-
     const filteredItems = routerTabs.filter(tab => tab.pathname !== targetKey);
     setRouterTabs(filteredItems);
     if (targetKey === pathname) {
@@ -32,18 +33,27 @@ export default function KeepAliveTabWrapper() {
 
   useEffect(() => {
     if (!routerTabs.some(tab => tab.pathname === pathname)) {
-      const matchedRouter = matches.at(-1);
+      const matchedRouter = last(matches);
       const routerHandle = matchedRouter?.handle as any;
-      setRouterTabs([...routerTabs, { pathname, title: routerHandle?.title }]);
+      setRouterTabs([
+        ...routerTabs,
+        {
+          pathname,
+          title: routerHandle?.title,
+          outlet,
+          routerPath: matchedRouter?.pathname,
+        },
+      ]);
     }
     setActiveTab(pathname);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+  }, [pathname, matches]);
 
   const items = routerTabs.map(tab => ({
     key: tab.pathname,
     label: tab.title || "Unknown",
-    // children: <Outlet />,
+    children: <Suspense fallback={<SuspenseFallback />}>{tab.outlet}</Suspense>,
+    closable: routerTabs.length > 1,
   }));
 
   return (

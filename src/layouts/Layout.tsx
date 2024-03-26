@@ -1,11 +1,9 @@
-import { Suspense } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Badge, Button, Flex, Layout as AntdLayout } from "antd";
 import { BellOutlined } from "@ant-design/icons";
-import { SuspenseFallback } from "@/components";
 import AvatarWrapper from "./components/AvatarWrapper";
 import FullscreenIconButton from "./components/FullscreenIconButton";
-import RouterTabs from "./components/RouterTabs";
+import KeepAliveTabWrapper from "./components/KeepAliveTabWrapper";
 import SettingIconButton from "./components/SettingIconButton";
 import SideBarMenu from "./components/SideMenu";
 import SideBar from "./SideBar";
@@ -40,10 +38,7 @@ export default function Layout() {
           <SideBarMenu />
         </SideBar>
         <AntdLayout.Content>
-          <RouterTabs />
-          <Suspense fallback={<SuspenseFallback />}>
-            <Outlet />
-          </Suspense>
+          <KeepAliveTabWrapper />
         </AntdLayout.Content>
       </AntdLayout>
     </>
