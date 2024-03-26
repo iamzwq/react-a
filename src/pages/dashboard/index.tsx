@@ -1,5 +1,6 @@
 import { Col, Row } from "antd";
 import { type EChartsOption, useEcharts } from "@/hooks";
+import { message } from "@/utils";
 
 export default function DashboardPage() {
   const option: EChartsOption = {
@@ -68,8 +69,12 @@ export default function DashboardPage() {
       },
     ],
   };
-  const chartRef = useEcharts(option);
-  const chartRef2 = useEcharts(option2);
+  const { chartRef } = useEcharts(option);
+  const { chartRef: chartRef2 } = useEcharts(option2, {
+    click: params => {
+      message.info(`The name is ${params.name}, the value is ${params.value}`);
+    },
+  });
 
   return (
     <div className="animate-router-enter">
