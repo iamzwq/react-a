@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
-export function RouterLoading() {
+export function SuspenseFallback() {
   useEffect(() => {
     NProgress.start();
     return () => {

@@ -1,2 +1,2 @@
-export * from "./RouterLoading";
 export * from "./SpinIndicator";
+export * from "./SuspenseFallback";

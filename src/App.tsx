@@ -4,7 +4,7 @@ import { App as AntdApp, ConfigProvider, Layout as AntdLayout, theme } from "ant
 import zhCN from "antd/locale/zh_CN";
 import dayjs from "dayjs";
 import { router } from "@/router";
-import { RouterLoading } from "@/components";
+import { SuspenseFallback } from "@/components";
 import { useDark } from "@/hooks";
 import { StaticAntd } from "@/utils";
 
@@ -32,7 +32,7 @@ export default function App() {
       <AntdApp>
         <AntdLayout style={{ minHeight: "100vh" }}>
           <StaticAntd />
-          <Suspense fallback={<RouterLoading />}>
+          <Suspense fallback={<SuspenseFallback />}>
             <RouterProvider router={router} />
           </Suspense>
         </AntdLayout>
