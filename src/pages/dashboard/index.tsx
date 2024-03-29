@@ -77,7 +77,7 @@ export default function DashboardPage() {
   });
 
   return (
-    <div className="animate-router-enter">
+    <div className="">
       <Row gutter={[24, 24]} style={{ marginLeft: 0, marginRight: 0 }} className="py-6">
         <Col span={12}>
           <div ref={chartRef} className="w-full h-96" />

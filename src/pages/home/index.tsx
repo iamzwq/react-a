@@ -57,7 +57,7 @@ const formatter = (value: number) => <CountUp end={value} separator="," />;
 
 export default function HomePage() {
   return (
-    <section className="animate-router-enter p-6">
+    <section className="p-6">
       <Row gutter={[16, 16]}>
         <Col span={15}>
           <Flex vertical gap="large">

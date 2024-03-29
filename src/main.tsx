@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { Spin } from "antd";
 import { SpinIndicator } from "@/components";
@@ -8,8 +7,4 @@ import "./styles/index.css";
 
 Spin.setDefaultIndicator(<SpinIndicator />);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+ReactDOM.createRoot(document.getElementById("root")!).render(<App />);

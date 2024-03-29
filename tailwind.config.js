@@ -32,7 +32,6 @@ export default {
       },
       animation: {
         "spin-slow": "spin 5s linear infinite",
-        "router-enter": "routerEnter 0.3s ease-in-out",
         "heart-beat": "heartBeat 0.6s ease-in-out",
       },
     },

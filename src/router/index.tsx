@@ -34,6 +34,9 @@ const routes: RouteObject[] = [
       },
       {
         path: "demo",
+        handle: {
+          title: "Demo",
+        },
         children: [
           {
             index: true,
@@ -60,6 +63,20 @@ const routes: RouteObject[] = [
         Component: lazy(() => import("@/pages/profile")),
         handle: {
           title: "个人中心",
+        },
+      },
+      {
+        path: "about",
+        Component: lazy(() => import("@/pages/about")),
+        handle: {
+          title: "关于",
+        },
+      },
+      {
+        path: "news",
+        Component: lazy(() => import("@/pages/news")),
+        handle: {
+          title: "表格",
         },
       },
       // ...routeConfig,

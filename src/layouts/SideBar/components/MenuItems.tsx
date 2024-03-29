@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { DashboardOutlined, FireOutlined, HomeOutlined } from "@ant-design/icons";
+import AboutMenuIcon from "@/assets/icons/AboutMenuIcon";
 import AlertTriangleIcon from "@/assets/icons/AlertTriangleIcon";
-import BirdIcon from "@/assets/icons/BirdIcon";
 import NewsIcon from "@/assets/icons/NewsIcon";
 
 export interface SideMenuItemsProps {
@@ -49,12 +49,12 @@ export const SIDE_MENU_ITEMS: SideMenuItemsProps[] = [
     ],
   },
   {
-    label: "关于",
+    label: <Link to="/about">关于</Link>,
     path: "/about",
-    icon: <BirdIcon />,
+    icon: <AboutMenuIcon />,
   },
   {
-    label: "新闻",
+    label: <Link to="/news">表格</Link>,
     path: "/news",
     icon: <NewsIcon />,
   },

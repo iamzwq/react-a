@@ -1,14 +1,12 @@
 :root {
-  --layout-header-bg: #fff;
-  --layout-body-bg: #fcfcfc;
   --color-primary: #722ed1;
   --color-scrollbar: #aaa;
+  --color-scrollbar-bg: #f5f5f5;
   --color-scrollbar-hover: #666;
 }
 
 html.dark {
-  --layout-header-bg: #000;
-  --layout-body-bg: #111;
   --color-scrollbar: #444;
+  --color-scrollbar-bg: #141414;
   --color-scrollbar-hover: #222;
 }

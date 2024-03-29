@@ -37,7 +37,7 @@ export default function LoginPage() {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
         size="large"
-        className="w-[400px] rounded-md bg-[--layout-body-bg] px-8 py-8 shadow"
+        className="w-[400px] rounded-md px-8 py-8 shadow"
       >
         <h2 className="mb-4 flex items-center justify-center">
           <img src="/favicon.svg" alt="logo" className="mr-2 w-9" />

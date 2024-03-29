@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { Layout } from "antd";
 
 export default function Page404() {
   return (
-    <Layout className="flex h-screen flex-col items-center justify-center">
+    <div className="flex h-screen flex-col items-center justify-center">
       <h1 className="text-2xl font-bold">Sorry, Page Not Found!</h1>
       <div className="animate-heart-beat h-72 w-72">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
@@ -1723,11 +1722,11 @@ export default function Page404() {
         </svg>
       </div>
       <Link
-        to="/"
+        to="/home"
         className="mt-6 rounded bg-black p-3 text-white dark:bg-white dark:text-black"
       >
-        Go to Home
+        Back Home
       </Link>
-    </Layout>
+    </div>
   );
 }

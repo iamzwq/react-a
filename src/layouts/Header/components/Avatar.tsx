@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Avatar, Dropdown, type MenuProps } from "antd";
+import { Avatar as AntdAvatar, Dropdown, type MenuProps } from "antd";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 
 const items: MenuProps["items"] = [
@@ -21,10 +21,10 @@ const items: MenuProps["items"] = [
   },
 ];
 
-export default function AvatarWrapper() {
+export default function Avatar() {
   return (
     <Dropdown menu={{ items }} arrow>
-      <Avatar
+      <AntdAvatar
         size={36}
         icon={<UserOutlined />}
         className="cursor-pointer bg-primary text-white"

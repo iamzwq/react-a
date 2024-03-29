@@ -1,8 +1,8 @@
-import { PropsWithChildren } from "react";
 import { Layout } from "antd";
 import { setSideCollapsed, useSettingStore } from "@/stores";
+import SideMenu from "./components/SideMenu";
 
-export default function SideBar({ children }: PropsWithChildren) {
+export default function SideBar() {
   const sideCollapsed = useSettingStore(state => state.sideCollapsed);
   return (
     <Layout.Sider
@@ -10,9 +10,10 @@ export default function SideBar({ children }: PropsWithChildren) {
       collapsible
       collapsed={sideCollapsed}
       onCollapse={setSideCollapsed}
+      breakpoint="lg"
       className="sticky top-16 h-[calc(100vh-112px)] overflow-y-auto"
     >
-      {children}
+      <SideMenu />
     </Layout.Sider>
   );
 }

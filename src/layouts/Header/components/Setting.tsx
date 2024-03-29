@@ -5,7 +5,7 @@ import { setThemeMode, useSettingStore } from "@/stores";
 import ComputerIcon from "@/assets/icons/ComputerIcon";
 import { ThemeMode } from "@/typings/public";
 
-export default function SettingIconButton() {
+export default function Setting() {
   const themeMode = useSettingStore(state => state.themeMode);
 
   const [open, setOpen] = useState(false);

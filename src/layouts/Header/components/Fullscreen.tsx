@@ -2,7 +2,7 @@ import { Button } from "antd";
 import { FullscreenExitOutlined, FullscreenOutlined } from "@ant-design/icons";
 import { useFullscreen } from "@/hooks";
 
-export default function FullscreenButton() {
+export default function Fullscreen() {
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   return (
     <Button
