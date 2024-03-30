@@ -13,16 +13,23 @@ export default function DashboardPage() {
     },
     tooltip: {
       trigger: "axis",
+      axisPointer: {
+        type: "cross",
+      },
     },
     xAxis: {
       type: "category",
       data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
       axisTick: {
+        show: false,
         alignWithLabel: true,
       },
     },
     yAxis: {
       type: "value",
+      axisTick: {
+        show: false,
+      },
     },
     series: [
       {

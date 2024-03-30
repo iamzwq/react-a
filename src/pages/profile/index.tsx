@@ -1,4 +1,4 @@
-import { Avatar, Typography } from "antd";
+import { Avatar, Card, Typography } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
 const profileData: Record<string, string> = {
@@ -13,12 +13,12 @@ const showList = ["email", "phone", "address", "bio"];
 
 export default function ProfilePage() {
   return (
-    <div className="bg-white dark:bg-black h-full">
-      <div className="w-2/3 p-4 mx-auto">
-        <h2>
+    <div className="h-full p-6">
+      <Card title="Profile">
+        <Typography.Title level={5}>
           <Avatar size="large" icon={<UserOutlined />} className="mr-4" />
           Vincent Zhang
-        </h2>
+        </Typography.Title>
         <ul className="flex flex-col mt-4 gap-4 pl-14">
           {showList.map(item => (
             <li key={item} className="list-none text-lg">
@@ -29,7 +29,7 @@ export default function ProfilePage() {
             </li>
           ))}
         </ul>
-      </div>
+      </Card>
     </div>
   );
 }

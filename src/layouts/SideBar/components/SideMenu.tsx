@@ -1,31 +1,29 @@
-import { useMatches } from "react-router-dom";
-import { Menu } from "antd";
-import type { GetProp, MenuProps } from "antd";
+import { Link, useMatches } from "react-router-dom";
+import { Menu, MenuProps } from "antd";
 import { last, toArray } from "@/utils";
-import { SIDE_MENU_ITEMS, SideMenuItemsProps } from "./MenuItems";
+import { SIDE_BAR_MENU_ITEMS } from "@/constants";
 
-type MenuItem = GetProp<MenuProps, "items">[number];
+type MenuItem = Required<MenuProps>["items"][number];
+
+const getItems = (menuItems: any, parentPath = ""): MenuItem[] => {
+  return menuItems.map((item: any) => {
+    const path = [parentPath, item.key].join("/");
+    return {
+      ...item,
+      children: item.children ? getItems(item.children, path) : null,
+      label: item.children ? item.label : <Link to={path}>{item.label}</Link>,
+    };
+  });
+};
 
 export default function SideMenu() {
   const matches = useMatches();
-
-  const generateMenuItems = (menus: SideMenuItemsProps[]): MenuItem[] => {
-    return menus
-      .filter(menu => menu.label)
-      .map(menu => ({
-        key: menu.path,
-        label: menu.label,
-        icon: menu.icon,
-        children: menu.children ? generateMenuItems(menu.children) : null,
-      }));
-  };
-  const menuItems = generateMenuItems(SIDE_MENU_ITEMS);
 
   const selectedKeys = matches.length > 0 ? toArray(last(matches).pathname) : [];
 
   return (
     <Menu
-      items={menuItems}
+      items={getItems(SIDE_BAR_MENU_ITEMS)}
       theme="light"
       mode="inline"
       selectedKeys={selectedKeys}
