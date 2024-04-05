@@ -2,14 +2,15 @@ import { Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Layout } from "antd";
 import { domAnimation, LazyMotion, m } from "framer-motion";
-import { SuspenseFallback } from "@/components";
+import ProgressBar from "@/components/ProgressBar";
+// import KeepAliveTabWrapper from "./components/KeepAliveTabWrapper";
 
 export default function Content() {
   const location = useLocation();
   return (
     <Layout.Content>
       {/* <KeepAliveTabWrapper /> */}
-      <Suspense fallback={<SuspenseFallback />}>
+      <Suspense fallback={<ProgressBar />}>
         <LazyMotion features={domAnimation}>
           <m.div
             key={location.key}

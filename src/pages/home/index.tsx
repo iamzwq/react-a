@@ -6,6 +6,7 @@ import {
   Card,
   Checkbox,
   Col,
+  DatePicker,
   Flex,
   Progress,
   Radio,
@@ -68,6 +69,7 @@ export default function HomePage() {
                 A
               </Button>
               <Button icon={<SearchOutlined />}>Search</Button>
+              <DatePicker />
             </Flex>
             <Flex gap="small">
               <Radio.Group>

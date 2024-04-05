@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { Spin } from "antd";
-import { SpinIndicator } from "@/components";
+import SpinIndicator from "@/components/SpinIndicator";
 import App from "./App.tsx";
 // css
 import "./styles/index.css";

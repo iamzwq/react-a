@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 
-export function SpinIndicator() {
+export default function SpinIndicator() {
   return (
     <div className="m-a h-[100px] w-[100px]">
       <div className={styles.loaderBounce} />

@@ -8,7 +8,7 @@ export const debounce = <F extends (...args: any[]) => any>(
   fn: F,
   delay: number = 500
 ) => {
-  let timer: NodeJS.Timeout | null = null;
+  let timer: ReturnType<typeof setTimeout> | null = null;
   return function (this: ThisParameterType<F>, ...args: Parameters<F>) {
     if (timer) clearTimeout(timer);
 
