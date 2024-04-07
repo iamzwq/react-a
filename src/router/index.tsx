@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-import { menuItemsToRoutes, SIDE_BAR_MENU_ITEMS } from "@/constants";
+import { HOME_PAGE_PATH } from "@/constants";
 
 const routes: RouteObject[] = [
   {
@@ -17,70 +17,70 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to={HOME_PAGE_PATH} replace />,
       },
-      // {
-      //   path: "home",
-      //   Component: lazy(() => import("@/pages/home")),
-      //   handle: {
-      //     title: "首页",
-      //   },
-      // },
-      // {
-      //   path: "dashboard",
-      //   Component: lazy(() => import("@/pages/dashboard")),
-      //   handle: {
-      //     title: "Dashboard",
-      //   },
-      // },
-      // {
-      //   path: "demo",
-      //   handle: {
-      //     title: "Demo",
-      //   },
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <Navigate to="/demo/level-1" replace />,
-      //     },
-      //     {
-      //       path: "level-1",
-      //       Component: lazy(() => import("@/pages/demo/level1")),
-      //       handle: {
-      //         title: "Level 1",
-      //       },
-      //     },
-      //     {
-      //       path: "level-2",
-      //       Component: lazy(() => import("@/pages/demo/level2")),
-      //       handle: {
-      //         title: "Level 2",
-      //       },
-      //     },
-      //   ],
-      // },
-      // {
-      //   path: "about",
-      //   Component: lazy(() => import("@/pages/about")),
-      //   handle: {
-      //     title: "关于",
-      //   },
-      // },
-      // {
-      //   path: "news",
-      //   Component: lazy(() => import("@/pages/news")),
-      //   handle: {
-      //     title: "表格",
-      //   },
-      // },
+      {
+        path: "home",
+        Component: lazy(() => import("@/pages/home")),
+        handle: {
+          title: "首页",
+        },
+      },
+      {
+        path: "dashboard",
+        Component: lazy(() => import("@/pages/dashboard")),
+        handle: {
+          title: "看板",
+        },
+      },
+      {
+        path: "nested-menu",
+        handle: {
+          title: "嵌套菜单",
+        },
+        children: [
+          {
+            index: true,
+            element: <Navigate to="/nested-menu/menu-1" replace />,
+          },
+          {
+            path: "menu-1",
+            Component: lazy(() => import("@/pages/nested-menu/menu-1")),
+            handle: {
+              title: "菜单-1",
+            },
+          },
+          {
+            path: "menu-2",
+            Component: lazy(() => import("@/pages/nested-menu/menu-2")),
+            handle: {
+              title: "菜单-2",
+            },
+          },
+        ],
+      },
+      {
+        path: "about",
+        Component: lazy(() => import("@/pages/about")),
+        handle: {
+          title: "关于",
+        },
+      },
+      {
+        path: "news",
+        Component: lazy(() => import("@/pages/news")),
+        handle: {
+          title: "表格",
+        },
+      },
       {
         path: "profile",
         Component: lazy(() => import("@/pages/profile")),
         handle: {
           title: "个人中心",
+          hideTab: true,
         },
       },
-      ...menuItemsToRoutes(SIDE_BAR_MENU_ITEMS),
     ],
   },
   {

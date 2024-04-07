@@ -10,6 +10,7 @@ const getItems = (menuItems: any, parentPath = ""): MenuItem[] => {
     const path = [parentPath, item.key].join("/");
     return {
       ...item,
+      key: path,
       children: item.children ? getItems(item.children, path) : null,
       label: item.children ? item.label : <Link to={path}>{item.label}</Link>,
     };

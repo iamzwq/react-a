@@ -1,1 +1,2 @@
-export * from "./sideBarMenuItems";
+export * from "./config";
+export * from "./sideBar";
