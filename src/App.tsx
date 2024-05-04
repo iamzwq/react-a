@@ -1,11 +1,11 @@
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import { RouterProvider } from "react-router-dom";
 import { App as AntdApp, ConfigProvider, Layout as AntdLayout, theme } from "antd";
 import zhCN from "antd/locale/zh_CN";
 import dayjs from "dayjs";
 import { router } from "@/router";
 import ProgressBar from "@/components/ProgressBar";
-import { useDark } from "@/hooks";
+import { useDarkMode } from "@/hooks";
 import { StaticAntd } from "@/utils";
 import { themeConfig } from "@/theme/antd/themeConfig";
 // antd 的 DatePicker 国际化中文失效，官网说是因为我项目中同时存在两个dayjs，也确实是这样，ahooks中也有dayjs
@@ -15,11 +15,7 @@ import "dayjs/locale/zh-cn";
 dayjs.locale("zh-cn");
 
 export default function App() {
-  const isDark = useDark();
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
+  const isDarkMode = useDarkMode();
 
   return (
     <ConfigProvider
@@ -30,8 +26,8 @@ export default function App() {
         token: {
           colorPrimary: "#722ed1",
         },
-        algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
-        ...themeConfig[isDark ? "dark" : "light"],
+        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        ...themeConfig[isDarkMode ? "dark" : "light"],
       }}
     >
       <AntdApp>

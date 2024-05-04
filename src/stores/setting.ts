@@ -5,6 +5,7 @@ import { ThemeMode } from "@/typings/public";
 const initialState = {
   sideCollapsed: false,
   themeMode: ThemeMode.Light,
+  isDarkMode: false,
 };
 
 export const useSettingStore = create<typeof initialState>()(
@@ -19,4 +20,8 @@ export const setSideCollapsed = (sideCollapsed: boolean) => {
 
 export const setThemeMode = (themeMode: ThemeMode) => {
   useSettingStore.setState({ themeMode });
+};
+
+export const setIsDarkMode = (isDarkMode: boolean) => {
+  useSettingStore.setState({ isDarkMode });
 };
